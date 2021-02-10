@@ -1,126 +1,25 @@
 <template>
   <div class="contain">
-    <div class="slider">
-      <Teste titulo="Categoria" />
-      
-      <h3>Ação</h3>
-
-      <!-- Botão Esquerda -->
-      <span
-        v-on:mouseover="scrollEsquerda()"
-        v-on:mouseout="clearScroll()"
-        class="handle handlePrev active"
-      >
-        <i class="fa fa-caret-left" aria-hidden="true"></i>
-      </span>
-
-      <!-- Cards -->
-      <div id="scroller" class="row">
-        <div class="row__inner">
-          <div class="gui-card">
-            <div class="gui-card__media">
-              <img
-                class="gui-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="gui-card__details">
-              <div class="gui-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-
-          <div class="gui-card">
-            <div class="gui-card__media">
-              <img
-                class="gui-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="gui-card__details">
-              <div class="gui-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-
-          <div class="gui-card">
-            <div class="gui-card__media">
-              <img
-                class="gui-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="gui-card__details">
-              <div class="gui-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-
-          <div class="gui-card">
-            <div class="gui-card__media">
-              <img
-                class="gui-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="gui-card__details">
-              <div class="gui-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-
-          <div class="gui-card">
-            <div class="gui-card__media">
-              <img
-                class="gui-card__img"
-                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-                alt=""
-              />
-            </div>
-            <div class="gui-card__details">
-              <div class="gui-card__title">Assassin’s Creed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Botão Direita -->
-      <span
-        v-on:mouseover="scrollDireita()"
-        v-on:mouseout="clearScroll()"
-        class="handle handleNext active"
-      >
-        <i class="fa fa-caret-right" aria-hidden="true"></i>
-      </span>
-    </div>
+      <Categoria titulo="Comédia" />
+      <Categoria titulo="Suspense" />
   </div>
 </template>
 
 <script>
-import Teste from './components/teste.vue'
+import Categoria from './components/Categoria.vue';
 
 export default {
   name: "App",
   components: {
-      Teste
+      Categoria
   },
   data() {
     return {
       nomeProjeto: "Netflix with Vue.js",
       intervalo: null
+
     }
-  },
-  methods: {
-      scrollDireita(){
-        this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft += 1 }  , 5);
-      },
-      scrollEsquerda(){
-        this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft -= 1 }  , 5);
-      },
-      clearScroll(){
-        clearInterval(this.intervalo);
-      }
-  }
+  }  
 };
 </script>
 
