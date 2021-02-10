@@ -14,70 +14,12 @@
     <!-- Cards -->
     <div ref="scroller" class="row">
       <div class="row__inner">
-        <div class="gui-card">
-          <div class="gui-card__media">
-            <img
-              class="gui-card__img"
-              src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-              alt=""
-            />
-          </div>
-          <div class="gui-card__details">
-            <div class="gui-card__title">Assassin’s Creed</div>
-          </div>
-        </div>
-
-        <div class="gui-card">
-          <div class="gui-card__media">
-            <img
-              class="gui-card__img"
-              src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-              alt=""
-            />
-          </div>
-          <div class="gui-card__details">
-            <div class="gui-card__title">Assassin’s Creed</div>
-          </div>
-        </div>
-
-        <div class="gui-card">
-          <div class="gui-card__media">
-            <img
-              class="gui-card__img"
-              src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-              alt=""
-            />
-          </div>
-          <div class="gui-card__details">
-            <div class="gui-card__title">Assassin’s Creed</div>
-          </div>
-        </div>
-
-        <div class="gui-card">
-          <div class="gui-card__media">
-            <img
-              class="gui-card__img"
-              src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-              alt=""
-            />
-          </div>
-          <div class="gui-card__details">
-            <div class="gui-card__title">Assassin’s Creed</div>
-          </div>
-        </div>
-
-        <div class="gui-card">
-          <div class="gui-card__media">
-            <img
-              class="gui-card__img"
-              src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
-              alt=""
-            />
-          </div>
-          <div class="gui-card__details">
-            <div class="gui-card__title">Assassin’s Creed</div>
-          </div>
-        </div>
+          <Filme tituloFilme="Outro título" imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700" />
+          <Filme tituloFilme="Outro título" imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700" />
+          <Filme tituloFilme="Outro título" imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700" />
+          <Filme tituloFilme="Outro título" imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700" />
+          <Filme tituloFilme="Outro título" imagem="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700" />
+        
       </div>
     </div>
 
@@ -93,8 +35,13 @@
 </template>
 
 <script>
+import Filme from './Filme.vue';
+
 export default {
   props: ["titulo"],
+  components: {
+      Filme
+  },
   methods: {
       scrollDireita(){
         this.intervalo = setInterval(() => { this.$refs.scroller.scrollLeft += 1 }  , 5);
