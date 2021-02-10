@@ -5,8 +5,8 @@
 
       <!-- Botão Esquerda -->
       <span
-        onmouseover="scrollEsquerda()"
-        onmouseout="clearScroll()"
+        v-on:mouseover="scrollEsquerda()"
+        v-on:mouseout="clearScroll()"
         class="handle handlePrev active"
       >
         <i class="fa fa-caret-left" aria-hidden="true"></i>
@@ -84,8 +84,8 @@
 
       <!-- Botão Direita -->
       <span
-        onmouseover="scrollDireita()"
-        onmouseout="clearScroll()"
+        v-on:mouseover="scrollDireita()"
+        v-on:mouseout="clearScroll()"
         class="handle handleNext active"
       >
         <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -102,8 +102,20 @@ export default {
   data() {
     return {
       nomeProjeto: "Netflix with Vue.js",
-    };
+      intervalo: null
+    }
   },
+  methods: {
+      scrollDireita(){
+        this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft += 1 }  , 5);
+      },
+      scrollEsquerda(){
+        this.intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft -= 1 }  , 5);
+      },
+      clearScroll(){
+        clearInterval(this.intervalo);
+      }
+  }
 };
 </script>
 
