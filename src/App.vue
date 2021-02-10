@@ -1,6 +1,8 @@
 <template>
   <div class="contain">
     <div class="slider">
+      <Teste titulo="Categoria" />
+      
       <h3>Ação</h3>
 
       <!-- Botão Esquerda -->
@@ -95,10 +97,13 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld'
+import Teste from './components/teste.vue'
 
 export default {
   name: "App",
+  components: {
+      Teste
+  },
   data() {
     return {
       nomeProjeto: "Netflix with Vue.js",
