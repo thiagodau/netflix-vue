@@ -8,14 +8,14 @@
       />
     </div>
     <div class="gui-card__details">
-      <div class="gui-card__title"> {{ tituloFilme }} </div>
+      <div class="gui-card__title"> {{ titulo }} </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    props: ['tituloFilme', 'imagem'],
+    props: ['titulo', 'imagem'],
     data(){
         return{
             efeitoClick: null

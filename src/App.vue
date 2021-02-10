@@ -1,31 +1,77 @@
 <template>
   <div class="contain">
-      <Categoria titulo="Comédia" />
-      <Categoria titulo="Suspense" />
+    <Categoria
+      v-for="categoria in categorias"
+      v-bind:key="categoria.id"
+      v-bind:titulo="categoria.titulo"
+      v-bind:filmes="categoria.filmes"
+    />
   </div>
 </template>
 
 <script>
-import Categoria from './components/Categoria.vue';
+import Categoria from "./components/Categoria.vue";
 
 export default {
   name: "App",
   components: {
-      Categoria
+    Categoria,
   },
   data() {
     return {
       nomeProjeto: "Netflix with Vue.js",
-      intervalo: null
-
-    }
-  }  
+      intervalo: null,
+      categorias: [
+        {
+          id: 1,
+          titulo: "Terror",
+          filmes: [
+            {
+              id: 1,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+            {
+              id: 2,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+            {
+              id: 3,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+            {
+              id: 4,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+            {
+              id: 5,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+            {
+              id: 6,
+              titulo: "It: A Coisa",
+              imagem:
+                "http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg",
+            },
+          ],
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
-
 
 body,
 html {
@@ -33,18 +79,18 @@ html {
   margin: 0;
   background: #0e0f11;
   color: #ecf0f1;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
 }
 * {
@@ -78,57 +124,55 @@ a:hover {
 }
 
 .slider {
-    height: 214px;
-    position: relative;
-    margin: 0;
-    padding: 0 4%;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
+  height: 214px;
+  position: relative;
+  margin: 0;
+  padding: 0 4%;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
 }
 
-.slider h3{
+.slider h3 {
   position: absolute;
   top: 22px;
   z-index: 30;
 }
 
 .slider .handle.handlePrev {
-    left: 11px;
-
+  left: 11px;
 }
 
 .slider .handle.handleNext {
-    right: 11px;
-
+  right: 11px;
 }
 
 .slider .handle.active {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .slider .handle {
-    background: rgba(20, 20, 20, 0.26);
-    position: absolute;
-    top: 0;
-    height: 251px;
-    bottom: 0;
-    z-index: 20;
-    width: 7%;
-    text-align: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    color: #fff;
+  background: rgba(20, 20, 20, 0.26);
+  position: absolute;
+  top: 0;
+  height: 251px;
+  bottom: 0;
+  z-index: 20;
+  width: 7%;
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
 }
 
-.fa{
+.fa {
   font-size: 46px;
   margin-top: 120px;
 }
@@ -147,7 +191,6 @@ a:hover {
   padding-bottom: 10px;
 }
 
-
 .gui-card {
   position: relative;
   display: inline-block;
@@ -159,13 +202,13 @@ a:hover {
   -webkit-transition: 450ms all;
   transition: 450ms all;
   -webkit-transform-origin: center left;
-          transform-origin: center left;
+  transform-origin: center left;
 }
 .gui-card__img {
   width: 250px;
   height: 140.625px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .gui-card__details {
   position: absolute;
@@ -175,14 +218,22 @@ a:hover {
   top: 0;
   font-size: 10px;
   opacity: 0;
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   -webkit-transition: 450ms opacity;
   transition: 450ms opacity;
 }
 .gui-card__details:after,
 .gui-card__details:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -197,11 +248,11 @@ a:hover {
   line-height: 50px;
   text-align: center;
   border-radius: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 .gui-card__details:before {
-  content: '▶';
+  content: "▶";
   left: 0;
   width: 100%;
   font-size: 30px;
@@ -220,19 +271,18 @@ a:hover {
 }
 .row__inner:hover {
   -webkit-transform: translate3d(-62.5px, 0, 0);
-          transform: translate3d(-62.5px, 0, 0);
+  transform: translate3d(-62.5px, 0, 0);
 }
 .row__inner:hover .gui-card {
   opacity: 0.3;
 }
 .row__inner:hover .gui-card:hover {
   -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
   opacity: 1;
 }
 .gui-card:hover ~ .gui-card {
   -webkit-transform: translate3d(125px, 0, 0);
-          transform: translate3d(125px, 0, 0);
+  transform: translate3d(125px, 0, 0);
 }
-
 </style>
