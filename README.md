@@ -6,7 +6,7 @@
 
 
 # Sobre o projeto
-
+ 
 Olá! O projeto parte da prática do curso [Introdução ao Vue JS 2](https://www.udemy.com/course/introducao-ao-vue-js-2/) onde imita um pouco da Netflix afim de desenvolver um projeto utilizando Vue JS 2 junto com algumas bibliotecas como **json-server** e **vue-resource**
 
 Foi utilizado nesse projeto
@@ -22,7 +22,7 @@ O curso aborda sobre o framework em geral desde o que é, sua estrutura, também
 
 Um pouco sobre o curso pode ser acessado pelo link [sobre o curso](https://www.youtube.com/watch?v=qBNOBIU5j0o&feature=youtu.be) feito pelo [Guilherme Ferreira](https://github.com/guiferreira).
 
-
+![](https://media-exp1.licdn.com/dms/image/C4E22AQFtbVPt_TyXTg/feedshare-shrink_1280/0/1612976806046?e=1616630400&v=beta&t=fRXyJY5gRtT786W2JQKi9wN9BAroJYevTGLUZQo2elw)
 
 ## Build Setup (Como ver na prática)
 
